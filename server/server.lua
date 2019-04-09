@@ -72,9 +72,9 @@ RegisterServerEvent("esx-qalle-jail:unJailPlayer")
 AddEventHandler("esx-qalle-jail:unJailPlayer", function(targetIdentifier)
     local src = source
     local xPlayer = ESX.GetPlayerFromIdentifier(targetIdentifier)
-    local xPlayer = ESX.GetPlayerFromId(src)
+    local PlayerData = ESX.GetPlayerFromId(src)
     
-    if xPlayer.job ~= nil and xPlayer.job.name == 'police' then
+    if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
         if xPlayer ~= nil then
             UnJail(xPlayer.source)
         else
